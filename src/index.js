@@ -1,4 +1,4 @@
-const plugin = require('@ethanbeeler/tailwindcss-modular-scales');
+const plugin = require('tailwindcss/plugin');
 const defaultScales = require('./default-scales');
 const customUtilities = require('./utility-classes');
 
