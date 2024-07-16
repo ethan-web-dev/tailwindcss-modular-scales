@@ -129,7 +129,7 @@ module.exports = {
     // ...
   },
   plugins: [
-    require('@ethan/tailwindcss-modular-scales'),
+    require('@ethanbeeler/tailwindcss-modular-scales'),
     // ...
   ],
 }
