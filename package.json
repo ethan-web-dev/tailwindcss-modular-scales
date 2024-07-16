@@ -1,0 +1,19 @@
+{
+  "name": "@ethanbeeler/tailwindcss-modular-scales",
+  "version": "1.0.0",
+  "description": "A zero config package for adding modular scales to your type system using tailwindcss.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tailwind",
+    "tailwindcss",
+    "modularscale"
+  ],
+  "author": "Ethan Beeler",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.4.5"
+  }
+}
