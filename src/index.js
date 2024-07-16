@@ -18,7 +18,7 @@ const modularScalesPlugin = plugin(function ({ addUtilities, theme }) {
 }, {
   theme: {
     modularScale: {
-      baseSize: 1, 
+      baseSize: 1,
       scales: scales,
     },
   },

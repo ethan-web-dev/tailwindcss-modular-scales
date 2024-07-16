@@ -1,6 +1,8 @@
 # Modular Scales for Tailwindcss
 
-This package was created to provide users of Tailwindcss the ability to leverage modular typographic scales. I have been testing and using this system in my applications for the past few months and I really find it useful. My hope is that this helps someone with their design system the way it has helped me.
+This package was created to provide users of Tailwindcss the ability to leverage modular typographic scales. I have been testing and using this system in my applications for the past few months and I really find it useful. My hope is that this helps someone with their design system the way it has helped me. 
+
+> **Note:** The common prefix `ms` has been replaced to `msc` for enhanced readability as of v2. The decision to revise the prefix was prompted by the apparent overlap in tailwinds native classes. The utility for `margin-inline-start` is prefixed with `ms` natively from tailwind.  
 
 ### What are Modular Scales? 
 
@@ -37,20 +39,20 @@ module.exports = {
 
 ## Basic Useage
 
-Now you can declare the modular scale prefixed with `ms` or `-ms` (for values smaller than 1rem).
+Now you can declare the modular scale prefixed with `msc` or `-msc` (for values smaller than 1rem).
 
 ```html
 <article>
-  <h3 class="ms-minor-third-4">
+  <h3 class="msc-minor-third-4">
     Title Text
   </h3>
-  <p class="ms-major-second-1">
-    Large body text  
+  <p class="msc-1 msc-major-second">
+    Large body text with compound syntax 
   </p>
-  <p class="ms-minor-third">
+  <p class="msc-minor-third">
     base text size
   </p>
-  <p class="-ms-augmented-fourth-2">
+  <p class="-msc-augmented-fourth-2">
     Small label text
   </p>
 </article>
@@ -84,35 +86,113 @@ This plugin includes 17 different default scale ratios, inspired by [Scott Kellu
 
 Each scale ratio ranges from `-ms-{ScaleName}-6` to `ms-{ScaleName}-16`. The utility class `ms-{ScaleName}` is included and is a 1:1 ratio to the base size. Below are the general formulas for each value: 
 
-| Scale Range       | Formula                        |
-| ----------------- | ------------------------------ |
-| -ms-{ScaleName}-6 | baseSize ÷ decimal<sup>6</sup>  |
-| -ms-{ScaleName}-5 | baseSize ÷ decimal<sup>5</sup>  |
-| -ms-{ScaleName}-4 | baseSize ÷ decimal<sup>4</sup>  |
-| -ms-{ScaleName}-3 | baseSize ÷ decimal<sup>3</sup>  |
-| -ms-{ScaleName}-2 | baseSize ÷ decimal<sup>2</sup>  |
-| -ms-{ScaleName}-1 | baseSize ÷ decimal<sup>1</sup>  |
-| ms-{ScaleName}    | baseSize                       |
-| ms-{ScaleName}-1  | baseSize × decimal<sup>1</sup>  |
-| ms-{ScaleName}-2  | baseSize × decimal<sup>2</sup>  |
-| ms-{ScaleName}-3  | baseSize × decimal<sup>3</sup>  |
-| ms-{ScaleName}-4  | baseSize × decimal<sup>4</sup>  |
-| ms-{ScaleName}-5  | baseSize × decimal<sup>5</sup>  |
-| ms-{ScaleName}-6  | baseSize × decimal<sup>6</sup>  |
-| ms-{ScaleName}-7  | baseSize × decimal<sup>7</sup>  |
-| ms-{ScaleName}-8  | baseSize × decimal<sup>8</sup>  |
-| ms-{ScaleName}-9  | baseSize × decimal<sup>9</sup>  |
-| ms-{ScaleName}-10 | baseSize × decimal<sup>10</sup> |
-| ms-{ScaleName}-11 | baseSize × decimal<sup>11</sup> |
-| ms-{ScaleName}-12 | baseSize × decimal<sup>12</sup> |
-| ms-{ScaleName}-13 | baseSize × decimal<sup>13</sup> |
-| ms-{ScaleName}-14 | baseSize × decimal<sup>14</sup> |
-| ms-{ScaleName}-15 | baseSize × decimal<sup>15</sup> |
-| ms-{ScaleName}-16 | baseSize × decimal<sup>16</sup> |
+| Scale Range        | Formula                        |
+| ------------------ | ------------------------------ |
+| -msc-{ScaleName}-6 | baseSize ÷ decimal<sup>6</sup>  |
+| -msc-{ScaleName}-5 | baseSize ÷ decimal<sup>5</sup>  |
+| -msc-{ScaleName}-4 | baseSize ÷ decimal<sup>4</sup>  |
+| -msc-{ScaleName}-3 | baseSize ÷ decimal<sup>3</sup>  |
+| -msc-{ScaleName}-2 | baseSize ÷ decimal<sup>2</sup>  |
+| -msc-{ScaleName}-1 | baseSize ÷ decimal<sup>1</sup>  |
+| msc-{ScaleName}    | baseSize                       |
+| msc-{ScaleName}-1  | baseSize × decimal<sup>1</sup>  |
+| msc-{ScaleName}-2  | baseSize × decimal<sup>2</sup>  |
+| msc-{ScaleName}-3  | baseSize × decimal<sup>3</sup>  |
+| msc-{ScaleName}-4  | baseSize × decimal<sup>4</sup>  |
+| msc-{ScaleName}-5  | baseSize × decimal<sup>5</sup>  |
+| msc-{ScaleName}-6  | baseSize × decimal<sup>6</sup>  |
+| msc-{ScaleName}-7  | baseSize × decimal<sup>7</sup>  |
+| msc-{ScaleName}-8  | baseSize × decimal<sup>8</sup>  |
+| msc-{ScaleName}-9  | baseSize × decimal<sup>9</sup>  |
+| msc-{ScaleName}-10 | baseSize × decimal<sup>10</sup> |
+| msc-{ScaleName}-11 | baseSize × decimal<sup>11</sup> |
+| msc-{ScaleName}-12 | baseSize × decimal<sup>12</sup> |
+| msc-{ScaleName}-13 | baseSize × decimal<sup>13</sup> |
+| msc-{ScaleName}-14 | baseSize × decimal<sup>14</sup> |
+| msc-{ScaleName}-15 | baseSize × decimal<sup>15</sup> |
+| msc-{ScaleName}-16 | baseSize × decimal<sup>16</sup> |
+
+## Syntax Variants
+
+In addition to the default combined syntax there is a compound syntax included as well. This gives users a wider variety of options when working with modular scales inside of their design system. 
+
+The compound syntax, although different, can be used the exact same way as the combined syntax. It has the same values and ranges, the only that differs is the way you author the code. 
+
+Here is an example of the compound modular scale utilities being used inside of a basic headless React component:
+
+```tsx
+import React, { ElementType, ForwardedRef } from 'react'
+import type { VariantProps } from 'class-variance-authority'
+import { cva } from 'class-variance-authority'
+import { cn } from './utils'
+
+const paragraphVariants = cva(
+  'text-red-500',
+{
+  variants: {
+    size: {
+      default: 'msc-0',
+      large: 'msc-1',
+      small: '-msc-1',
+    },
+    scale: {
+      minorSecond: 'msc-minor-second',
+      majorSecond: 'msc-major-second',
+      minorThird: 'msc-minor-third',
+    },
+  },
+  defaultVariants: {
+    size: 'default',
+    scale: 'minorSecond',
+  },
+})
+
+type ParagraphSize = 'default' | 'large' | 'small'
+
+type ParagraphScale = 'minorSecond' | 'majorSecond' | 'minorThird'
+
+interface ParagraphProps extends React.HTMLAttributes<HTMLParagraphElement>, VariantProps<typeof paragraphVariants> {
+  children?: React.ReactNode
+  className?: string
+  size?: ParagraphSize
+  scale?: ParagraphScale
+}
+
+export const P = React.forwardRef<HTMLParagraphElement, ParagraphProps>(({
+  children,
+  className,
+  size,
+  scale,
+  ...props
+}, ref: ForwardedRef<HTMLParagraphElement>) => {
+  const classNameCollection = cn(
+    paragraphVariants({ size, scale }),
+    className,
+  )
+
+  return (
+    <p ref={ref} className={classNameCollection} {...props}>
+      {children}
+    </p>
+  )
+})
+
+P.displayName = 'P'
+```
+
+Now you can go and use this component inside of your application like this:
+
+```tsx
+<article>
+  <P scale="minorThird" size="small">Hello World with custom pee</P>
+  <P scale="minorSecond" size="default">Hello World with custom pee</P>
+  <P scale="majorSecond" size="large">Hello World with custom pee</P>
+</article>
+```
 
 ## Extending the Default Styles
 
-You can extend this plugin to use any arbitrary scale and baseSize you like:
+You can extend this plugin to use any arbitrary scale and baseSize you like, the single configuration object supports both syntax options:
 
 ```js
 /** @type {import('tailwindcss').Config} */
@@ -139,13 +219,13 @@ You can now use the above scale we just defined like this:
 
 ```html
 <article>
-  <h3 class="ms-swag-scale-4">
+  <h3 class="msc-swag-scale-4">
     Lorem Ipsum
   </h3>
-  <p class="ms-swag-scale-1">
+  <p class="msc-swag-scale-1">
     dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
   </p>
-  <p class="ms-swag-scale">
+  <p class="msc-swag-scale msc-4">
     Ut enim ad minim veniam
   </p>
 </article>
