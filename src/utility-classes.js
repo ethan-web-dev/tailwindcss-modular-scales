@@ -9,6 +9,7 @@ module.exports = (scaleName, ratio, baseSize) => {
     cssRules[`.${className1}`] = { fontSize: value };
 
     cssRules[`.${className2.replace(/ /g, '.').replace(/\/$/, '')}`] = { fontSize: value };
-
+	
+	}
   return cssRules;
 };
