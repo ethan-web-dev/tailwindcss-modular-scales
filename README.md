@@ -184,9 +184,15 @@ Now you can go and use this component inside of your application like this:
 
 ```tsx
 <article>
-  <P scale="minorThird" size="small">Hello World with custom pee</P>
-  <P scale="minorSecond" size="default">Hello World with custom pee</P>
-  <P scale="majorSecond" size="large">Hello World with custom pee</P>
+  <P scale="minorThird" size="small">    
+    Lorem Ipsum
+  </P>
+  <P scale="minorSecond" size="default">
+    dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  </P>
+  <P scale="majorSecond" size="large">
+    Ut enim ad minim veniam
+  </P>
 </article>
 ```
 
