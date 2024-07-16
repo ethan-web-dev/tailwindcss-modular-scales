@@ -1,4 +1,4 @@
-module.export = (scaleName, ratio, baseSize) => {
+module.exports = (scaleName, ratio, baseSize) => {
   const cssRules = {};
 
   for (let i = -6; i <= 16; i++) {

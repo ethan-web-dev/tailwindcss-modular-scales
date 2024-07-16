@@ -1,10 +1,10 @@
 const plugin = require('@ethanbeeler/tailwindcss-modular-scales');
-const scales = require('./scales');
+const defaultScales = require('./default-scales');
 const customUtilities = require('./utility-classes');
 
 const modularScales = plugin(function ({ addUtilities, theme, e }) {
   const baseSize = parseFloat(theme('modularScale.baseSize', 1));
-  const scales = theme('modularScale.scales', {});
+  const scales = theme('modularScale.defaultScales', {});
 
   const utilities = {};
 
@@ -19,7 +19,7 @@ const modularScales = plugin(function ({ addUtilities, theme, e }) {
   theme: {
     modularScale: {
       baseSize: 1, 
-      scales: modularScales,
+      scales: defaultScales,
     },
   },
 });
