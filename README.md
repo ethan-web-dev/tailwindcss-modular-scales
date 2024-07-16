@@ -1,6 +1,6 @@
 # Modular Scales for Tailwindcss
 
-This package was created to provide users of Tailwindcss the ability to leverage modular typographic scales. I have been testing and using this system in my applications for the past few months and I really find it helpful when building layouts from scratch. My hope is that this helps someone with their design system the way it has helped me.
+This package was created to provide users of Tailwindcss the ability to leverage modular typographic scales. I have been testing and using this system in my applications for the past few months and I really find it useful. My hope is that this helps someone with their design system the way it has helped me.
 
 ### What are Modular Scales? 
 
@@ -17,7 +17,7 @@ If this sounds confusing, or you are unfamiliar with modular scale, here is a mo
 Install the plugin: 
 
 ```shell
-npm install -D @ethan/tailwindcss-modular-scales
+npm install -D @ethanbeeler/tailwindcss-modular-scales
 ```
 
 Then add the plugin to your `tailwind.config.js` file:
@@ -29,7 +29,7 @@ module.exports = {
     // ...
   },
   plugins: [
-    require('@ethan/tailwindcss-modular-scales'),
+    require('@ethanbeeler/tailwindcss-modular-scales'),
     // ...
   ],
 }
