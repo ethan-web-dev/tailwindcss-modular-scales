@@ -1,6 +1,6 @@
 {
   "name": "@ethanbeeler/tailwindcss-modular-scales",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "A zero config package for adding modular scales to your type system using tailwindcss.",
   "main": "src/index.js",
   "repository": {
